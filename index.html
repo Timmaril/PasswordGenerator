@@ -9,13 +9,29 @@
 </head>
 <body>
     <div class="container">
-      <h2>Random password generator</h2>
-      <input type="text" name="" id="password" placeholder="create password" readonly>
-      <table>
-        <th><div id="button" class="btn1" onclick="genPassword()">Generate</div></th>
-        <th><a id="button" class="btn2" onclick="copyPassword">copy</a></th>
-      </table>
-    </div>  
+      <h1>Password generator</h1>
+      <h3 class="pass_display">Password</h3>
+      <form id="passwordGeneratorForm" class="form">
+        <label for="">Number of characters</label>
+        <div class="character_Amount">
+          <input type="range" min="1" max="50" 
+          id="characterAmountRange" value="10">
+          <input type="number" min="1" max="50" 
+          id="characterAmountNumber" value="10" class="numberDisplay">
+        </div>
+        
+           <label for="">Include Uppercase</label>
+           <input type="checkbox" id="includeUppercase">
+
+           <label for="">Include Numbers</label>
+           <input type="checkbox" id="includeNumbers">
+
+           <label for="">Include Symbols</label>
+           <input type="checkbox" id="includeSymbols">
+
+           <button type="submit" class="btn">Generate Password</button>
+      </form>
+    </div>
     <script src="script.js" defer></script>
 </body>
 </html>

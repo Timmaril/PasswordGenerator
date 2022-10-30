@@ -1,11 +1,17 @@
-var password = document.getElementById('password')
-var char = "0123456789qwertyuiopasdfghjklxcvbnm!#$%^&*()_+QWERTYUIOPASDFGHJKLZXCVBNM"
-var passwordLength = 10
-var password =""   
+const characterAmountRange = document.getElementById
+('characterAmountRange')
+const characterAmountNumber = document.getElementById
+('characterAmountNumber')
+const form = document.getElementById('passwordGeneratorForm')
 
-for (var i = 0; i<= passwordLength; i++) {
-   var randomNumber = Math.floor(Math.random() * char.length)
-   password += char.substring(randomNumber, randomNumber +1)
-    
+characterAmountNumber.addEventListener('input', syncCharacterAmount)
+characterAmountRange.addEventListener('input', syncCharacterAmount)
+form.addEventListener('submit', (e)=>{
+   e.preventDefault()
+})
+
+function syncCharacterAmount(e){
+   const value = e.target.value
+   characterAmountNumber.value = value
+   characterAmountRange.value = value
 }
-document.getElementById("password").value = password
