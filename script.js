@@ -7,7 +7,7 @@ const symbolsElement = document.getElementById('includeSymbols')
 const generateElement = document.getElementById('button')
 const rangeElement = document.getElementById('characterAmountRange')
 const form = document.getElementById('passwordGeneratorForm')
-
+const copyClipboard = document.getElementById('clipboard')
 
 const randomFunc = {
    upper: getRandomUpper,
@@ -34,6 +34,21 @@ generateElement.addEventListener('click', ()=>{
       hasSymbols, 
       length)
 
+})
+copyClipboard.addEventListener('click',()=>{
+   const textarea = document.createElement('textarea')
+   const password = resultElement.innerText
+
+   if(!password){
+      return
+   }
+
+   textarea.value = password
+   document.body.appendChild(textarea)
+   textarea.select()
+   document.execCommand('copy')
+   textarea.remove()
+   alert('password has been copied to clipboard!')
 })
 //Generate password function
 function generatePassword(upper,number,symbol, length){

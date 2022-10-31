@@ -101,16 +101,33 @@ label {
 .pass_display{
     background-color: var(--clr-white);
     color: var(--clr-black);
-    width: 350px;
+    width: 300px;
+    float: left;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
+    height: 2rem;
     border: 1px solid var(--clr-primary-1);
     border-radius: var(--radius);
+    word-break: break-all;
 }
 h1{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.dislaycontainer{
+    padding: 1rem;
+}
+.uil{
+    width: 2rem;
+    float: right;
+    margin-top: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    cursor: pointer;
 }
