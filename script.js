@@ -51,20 +51,26 @@ copyClipboard.addEventListener('click',()=>{
    alert('password has been copied to clipboard!')
 })
 //Generate password function
-function generatePassword(upper,number,symbol, length){
+function generatePassword(upper,lower,number,symbol, length){
   
    let genaratedPassword = ''
 
-   const typesCount = upper + number + symbol
+   const typesCount = upper + lower + number + symbol
    // console.log('typesCount:', typesCount)
-   const typesArr = [{upper},{symbol},{number}].filter
+   const typesArr = [{upper},{lower},{symbol},{number}].filter
    (item => Object.values(item)[0])
    // console.log('typesArr:',typesArr)
 
    if(typesCount === 0){
       return ''
    }
-   if(typesCount != upper){
+   // if(typesCount != upper){
+   //    getRandomLower()
+   // }
+   if(typesCount === upper){
+      getRandomUpper()
+   }
+   if(typesCount === lower){
       getRandomLower()
    }
 
